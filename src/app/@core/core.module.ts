@@ -11,6 +11,8 @@ import {
   PlayerService,
   SeoService,
   StateService,
+  MemebersService,
+  HttpService,
 } from './utils';
 import { UserData } from './data/users';
 import { ElectricityData } from './data/electricity';
@@ -52,6 +54,8 @@ import { StatsProgressBarService } from './mock/stats-progress-bar.service';
 import { VisitorsAnalyticsService } from './mock/visitors-analytics.service';
 import { SecurityCamerasService } from './mock/security-cameras.service';
 import { MockDataModule } from './mock/mock-data.module';
+
+
 
 const socialLinks = [
   {
@@ -143,6 +147,8 @@ export const NB_CORE_PROVIDERS = [
   PlayerService,
   SeoService,
   StateService,
+  MemebersService,
+  HttpService,
 ];
 
 @NgModule({

@@ -1,0 +1,12 @@
+{
+  "/api/api.php/*": {
+    "target": "https://demo.gymfiy.com",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/API/*": {
+    "target": "http://localhost/gymfiy/",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

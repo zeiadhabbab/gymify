@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.component.scss'],
   template: `
     <span class="created-by">
-      Created with ♥ by <b><a href="https://akveo.page.link/8V2f" target="_blank">Akveo</a></b> 2019
+      Created with ♥ by <b><a href="https://alahd.tech/" target="_blank">ِAlahd Tech</a></b> {{currentYear}}
     </span>
     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>
@@ -16,4 +16,7 @@ import { Component } from '@angular/core';
   `,
 })
 export class FooterComponent {
+  currentYear: string = new Date().getFullYear().toString();
 }
+
+
