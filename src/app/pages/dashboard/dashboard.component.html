@@ -1,25 +1,25 @@
 <div class="row">
   <div class="col-xxxl-3 col-md-3">
-    <ngx-status-card [title]="paymentOverdueCard.title" [type]="paymentOverdueCard.type" [subText]="paymentOverdueCount">
+    <ngx-status-card [title]="paymentOverdueCard.title | translate" [type]="paymentOverdueCard.type" [subText]="paymentOverdueCount">
       <nb-icon [ngClass]="paymentOverdueCard.iconClass" [icon]="paymentOverdueCard.iconClass" pack="eva"></nb-icon>
     </ngx-status-card>
   </div>
 
   <div class="col-xxxl-3 col-md-3">
-    <ngx-status-card [title]="todayAttendanceCard.title" [type]="todayAttendanceCard.type" [subText]="todayAttendanceCount">
+    <ngx-status-card [title]="todayAttendanceCard.title | translate" [type]="todayAttendanceCard.type" [subText]="todayAttendanceCount">
       <nb-icon [ngClass]="todayAttendanceCard.iconClass" [icon]="todayAttendanceCard.iconClass" pack="eva"></nb-icon>
     </ngx-status-card>
   </div>
 
 
   <div class="col-xxxl-3 col-md-3">
-    <ngx-status-card [title]="activeMemberCard.title" [type]="activeMemberCard.type" [subText]="activeMemberCount">
+    <ngx-status-card [title]="activeMemberCard.title | translate" [type]="activeMemberCard.type" [subText]="activeMemberCount">
       <nb-icon [ngClass]="activeMemberCard.iconClass" [icon]="activeMemberCard.iconClass" pack="eva"></nb-icon>
     </ngx-status-card>
   </div>
 
   <div class="col-xxxl-3 col-md-3">
-    <ngx-status-card title="{'dashboard.all-members' | translate}" [type]="allMembersCard.type" [subText]="allMembersCount">
+    <ngx-status-card [title]="allMembersCard.title | translate" [type]="allMembersCard.type" [subText]="allMembersCount">
       <nb-icon [ngClass]="allMembersCard.iconClass" [icon]="allMembersCard.iconClass" pack="eva"></nb-icon>
     </ngx-status-card>
   </div>
@@ -29,9 +29,9 @@
 
 
 <div class="row">
-  <div class="col-xxxl-9 col-xl-12">
+  <div class="col-xxxl-12 col-xl-12">
     <nb-card>
-      <nb-card-header>Member Attendance this Month</nb-card-header>
+      <nb-card-header>{{ "dashboard.Member-Attendance-this-Month" | translate}}</nb-card-header>
       <nb-card-body>
         <div echarts [options]="options" class="echart"></div>
       </nb-card-body>

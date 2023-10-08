@@ -1,5 +1,20 @@
 {
   "dashboard": {
-    "all-members": "All Members"
+    "All-Members": "All Members",
+    "Attended": "Attended",
+    "Member-Attendance-this-Month": "Member Attendance this Month",
+    "Active-Members": "Active Members",
+    "Today-Attendance": "Today Attendance",
+    "Payment-Overdue": "Payment Overdue",
+
+    "": "",
+    "": ""
+  },
+  "theme": {
+    "dark": "Dark",
+    "default": "Light"
+  },
+  "menu":{
+    "Dashboard":"Dashboard"
   }
 }

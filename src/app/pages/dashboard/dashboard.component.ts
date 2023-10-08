@@ -3,6 +3,7 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators' ;
 import { SolarData } from '../../@core/data/solar';
 import { MemebersService } from '../../@core/utils';
+import { TranslateService } from '@ngx-translate/core';
 
 interface CardSettings {
   title: string;
@@ -26,25 +27,25 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
   activeMemberCount = 0;
 
   todayAttendanceCard: CardSettings = {
-    title: 'Today Attendance',
+    title: 'dashboard.Today-Attendance',
     iconClass: 'log-in',
     type: 'success',
   };
 
   allMembersCard: CardSettings = {
-    title: 'All Members',
+    title: 'dashboard.All-Members',
     iconClass: 'people-outline',
     type: 'warning',
   };
 
   activeMemberCard: CardSettings = {
-    title: 'Active Members',
+    title: 'dashboard.Active-Members',
     iconClass: 'person-done-outline',
     type: 'primary',
   };
 
   paymentOverdueCard: CardSettings = {
-    title: 'Payment Overdue',
+    title: 'dashboard.Payment-Overdue',
     iconClass: 'alert-triangle-outline',
     type: 'danger',
   };
@@ -53,7 +54,7 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
 
   themeSubscription: any;
 
-  constructor(private theme: NbThemeService,
+  constructor(private theme: NbThemeService, private translateService: TranslateService,
               private solarService: SolarData, private memebersService: MemebersService) {
 
     this.solarService.getSolarData()
@@ -165,7 +166,7 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
           ],
           series: [
             {
-              name: 'Score',
+              name: this.translateService.instant('dashboard.Attended'),
               type: 'bar',
               barWidth: '60%',
               data: count,
@@ -174,8 +175,6 @@ export class DashboardComponent implements OnDestroy, AfterViewInit {
         };
 
       });
-
-
 
 
     });

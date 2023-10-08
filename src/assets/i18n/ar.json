@@ -1,5 +1,19 @@
 {
   "dashboard": {
-    "all-members": "جميعع الأعضاء"
+    "All-Members": "جميع الأعضاء",
+    "Attended": "حضر",
+    "Member-Attendance-this-Month": "الحضور خلال الشهر الحالي",
+    "Active-Members": "الأعضاء الفاعلين",
+    "Today-Attendance": "حضر اليوم",
+    "Payment-Overdue": "التأخر في الدفع",
+    "": "",
+    "": ""
+  },
+  "theme":{
+    "dark": "داكن",
+    "default": "فاتح"
+  },
+  "menu":{
+    "Dashboard":"الرئيسية"
   }
 }

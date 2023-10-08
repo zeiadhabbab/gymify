@@ -5,6 +5,12 @@ export interface User {
   picture: string;
 }
 
+export interface CurrentUser {
+  firstName: string;
+  lastName: string;
+  id: number;
+}
+
 export interface Contacts {
   user: User;
   type: string;

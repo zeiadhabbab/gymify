@@ -1,11 +1,13 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
 import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
-
-import { UserData } from '../../../@core/data/users';
+import { TranslateService } from "@ngx-translate/core";
+import { CurrentUser } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
+import { UserService } from '../../../@core/utils';
 import { map, takeUntil } from 'rxjs/operators';
 import { Subject } from 'rxjs';
+
 
 @Component({
   selector: 'ngx-header',
@@ -16,48 +18,52 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   private destroy$: Subject<void> = new Subject<void>();
   userPictureOnly: boolean = false;
-  user: any;
+
+  user: CurrentUser = {
+    firstName : "",
+    lastName : "",
+    id: 0,
+  };
 
   themes = [
     {
       value: 'default',
-      name: 'Light',
+      name: 'default',
     },
     {
       value: 'dark',
-      name: 'Dark',
-    },
-    {
-      value: 'cosmic',
-      name: 'Cosmic',
-    },
-    {
-      value: 'corporate',
-      name: 'Corporate',
-    },
+      name: 'dark',
+    }
   ];
 
   currentTheme = 'default';
 
   userMenu = [ { title: 'Profile' }, { title: 'Log out', link: '/auth/logout' } ];
 
+
+
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
-              private userDataService: UserData,
               private layoutService: LayoutService,
               private authService: NbAuthService,
-              private breakpointService: NbMediaBreakpointsService) {
+              private userService: UserService,
+              private breakpointService: NbMediaBreakpointsService,
+              public translate: TranslateService) {
 
         this.authService.onTokenChange()
         .subscribe((token: NbAuthJWTToken) => {
 
           if (token.isValid()) {
-            /*TODO:
-            * Fill user Data here
-            * */
-            let user = token.getPayload(); // here we receive a payload from the token and assigns it to our `user` variable
+            let data = token.getPayload(); // here we receive a payload from the token and assigns it to our `user` variable
+            this.user.firstName= data['data']['first_name'];
+            this.user.lastName = data['data']['last_name'];
+            this.user.id = data['data']['id'];
+
+            /*Put user Information*/
+            this.userService.setCurrentUser(this.user);
           }
+
 
         });
   }
@@ -65,9 +71,6 @@ export class HeaderComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
 
-    this.userDataService.getUsers()
-      .pipe(takeUntil(this.destroy$))
-      .subscribe((users: any) => this.user = users.nick);
 
     const { xl } = this.breakpointService.getBreakpointsMap();
     this.themeService.onMediaQueryChange()
@@ -104,5 +107,21 @@ export class HeaderComponent implements OnInit, OnDestroy {
   navigateHome() {
     this.menuService.navigateHome();
     return false;
+  }
+
+
+  changeLanguage(currentLang){
+    const bodyTag = document.body;
+    if(currentLang == 'ar'){
+      this.translate.use('en');
+      bodyTag.classList.remove('rtl');
+      document.dir = 'ltr';
+      localStorage.setItem('lang','en');
+    }else{
+      this.translate.use('ar');
+      bodyTag.classList.add('rtl');
+      document.dir = 'rtl'
+      localStorage.setItem('lang','ar');
+    }
   }
 }
