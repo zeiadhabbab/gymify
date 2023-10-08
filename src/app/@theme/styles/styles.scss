@@ -31,3 +31,8 @@
 
   @include nb-overrides();
 };
+
+/*Zeyad: Custom login page*/
+.navigation .link nb-icon, nb-login .another-action {
+  display: none !important;
+}

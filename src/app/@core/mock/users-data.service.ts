@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import { Contacts, RecentUsers, UserData } from '../data/users';
 
 @Injectable()
-export class UserService extends UserData {
+export class UserDataService extends UserData {
 
   private time: Date = new Date;
 

@@ -1,5 +1,8 @@
 import { ExtraOptions, RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
+import { OnlyLoggedInUsersGuard } from './@core/utils/guard.service';
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
+
 import {
   NbAuthComponent,
   NbLoginComponent,
@@ -12,6 +15,7 @@ import {
 export const routes: Routes = [
   {
     path: 'pages',
+    canActivate: [OnlyLoggedInUsersGuard],
     loadChildren: () => import('./pages/pages.module')
       .then(m => m.PagesModule),
   },

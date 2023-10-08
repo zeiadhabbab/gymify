@@ -1,10 +1,10 @@
-import { Injectable, OnDestroy } from '@angular/core';
-import {HttpService} from "./http.service";
+import { Injectable } from '@angular/core';
+import { AppHttpService } from "./http.service";
 
 @Injectable()
-export class MemebersService implements OnDestroy  {
+export class MemebersService   {
 
-  constructor(private httpService: HttpService){
+  constructor(private httpService: AppHttpService){
 
   }
 
@@ -29,8 +29,5 @@ export class MemebersService implements OnDestroy  {
     return this.httpService.get(`payments/payment_overdue.php`);
   }
 
-  ngOnDestroy() {
-
-  }
 
 }

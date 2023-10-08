@@ -1,6 +1,6 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
+import { NbAuthModule, NbPasswordAuthStrategy , NbAuthJWTToken} from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
@@ -12,7 +12,9 @@ import {
   SeoService,
   StateService,
   MemebersService,
-  HttpService,
+  AppHttpService,
+  UserService,
+  OnlyLoggedInUsersGuard,
 } from './utils';
 import { UserData } from './data/users';
 import { ElectricityData } from './data/electricity';
@@ -34,7 +36,7 @@ import { StatsProgressBarData } from './data/stats-progress-bar';
 import { VisitorsAnalyticsData } from './data/visitors-analytics';
 import { SecurityCamerasData } from './data/security-cameras';
 
-import { UserService } from './mock/users.service';
+import { UserDataService } from './mock/users-data.service';
 import { ElectricityService } from './mock/electricity.service';
 import { SmartTableService } from './mock/smart-table.service';
 import { UserActivityService } from './mock/user-activity.service';
@@ -76,8 +78,8 @@ const socialLinks = [
 ];
 
 const DATA_SERVICES = [
-  { provide: UserData, useClass: UserService },
   { provide: ElectricityData, useClass: ElectricityService },
+  { provide: UserData, useClass: UserDataService },
   { provide: SmartTableData, useClass: SmartTableService },
   { provide: UserActivityData, useClass: UserActivityService },
   { provide: OrdersChartData, useClass: OrdersChartService },
@@ -110,19 +112,34 @@ export const NB_CORE_PROVIDERS = [
   ...NbAuthModule.forRoot({
 
     strategies: [
-      NbDummyAuthStrategy.setup({
+      NbPasswordAuthStrategy.setup({
         name: 'email',
-        delay: 3000,
+        token: {
+          class: NbAuthJWTToken,
+          key: 'document.access_token',
+        },
+        baseEndpoint: '/API/token/',
+        login: {
+          alwaysFail: false,
+          endpoint: 'generate.php',
+          method: 'POST',
+          redirect: {
+            success: '/',
+            failure: '/auth/login',
+          },
+        },
+        logout: {
+          alwaysFail: false,
+          endpoint: 'generate.php',
+          method: 'delete',
+          redirect: {
+            success: '/',
+            failure: '/auth/login',
+          },
+        }
       }),
     ],
-    forms: {
-      login: {
-        socialLinks: socialLinks,
-      },
-      register: {
-        socialLinks: socialLinks,
-      },
-    },
+    forms: {},
   }).providers,
 
   NbSecurityModule.forRoot({
@@ -148,7 +165,9 @@ export const NB_CORE_PROVIDERS = [
   SeoService,
   StateService,
   MemebersService,
-  HttpService,
+  AppHttpService,
+  OnlyLoggedInUsersGuard,
+  UserService
 ];
 
 @NgModule({

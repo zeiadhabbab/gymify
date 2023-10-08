@@ -5,7 +5,7 @@
     "changeOrigin": true
   },
   "/API/*": {
-    "target": "http://localhost/gymfiy/",
+    "target": "http://localhost/gymify-api/",
     "secure": false,
     "changeOrigin": true
   }

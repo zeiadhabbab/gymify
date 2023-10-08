@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { NbMediaBreakpointsService, NbMenuService, NbSidebarService, NbThemeService } from '@nebular/theme';
+import { NbAuthService, NbAuthJWTToken } from '@nebular/auth';
 
 import { UserData } from '../../../@core/data/users';
 import { LayoutService } from '../../../@core/utils';
@@ -38,20 +39,33 @@ export class HeaderComponent implements OnInit, OnDestroy {
 
   currentTheme = 'default';
 
-  userMenu = [ { title: 'Profile' }, { title: 'Log out' } ];
+  userMenu = [ { title: 'Profile' }, { title: 'Log out', link: '/auth/logout' } ];
 
   constructor(private sidebarService: NbSidebarService,
               private menuService: NbMenuService,
               private themeService: NbThemeService,
-              private userService: UserData,
+              private userDataService: UserData,
               private layoutService: LayoutService,
+              private authService: NbAuthService,
               private breakpointService: NbMediaBreakpointsService) {
+
+        this.authService.onTokenChange()
+        .subscribe((token: NbAuthJWTToken) => {
+
+          if (token.isValid()) {
+            /*TODO:
+            * Fill user Data here
+            * */
+            let user = token.getPayload(); // here we receive a payload from the token and assigns it to our `user` variable
+          }
+
+        });
   }
 
   ngOnInit() {
     this.currentTheme = this.themeService.currentTheme;
 
-    this.userService.getUsers()
+    this.userDataService.getUsers()
       .pipe(takeUntil(this.destroy$))
       .subscribe((users: any) => this.user = users.nick);
 

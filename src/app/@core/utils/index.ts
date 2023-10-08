@@ -4,7 +4,9 @@ import { PlayerService } from './player.service';
 import { StateService } from './state.service';
 import { SeoService } from './seo.service';
 import { MemebersService } from './members.service';
-import { HttpService } from './http.service';
+import { AppHttpService } from './http.service';
+import { OnlyLoggedInUsersGuard } from './guard.service';
+import { UserService } from './user.service';
 
 export {
   LayoutService,
@@ -13,5 +15,7 @@ export {
   SeoService,
   StateService,
   MemebersService,
-  HttpService,
+  AppHttpService,
+  OnlyLoggedInUsersGuard,
+  UserService
 };
