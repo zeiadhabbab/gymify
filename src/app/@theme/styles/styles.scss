@@ -8,6 +8,8 @@
 @import '@nebular/theme/styles/globals';
 @import '@nebular/auth/styles/globals';
 
+
+
 @import 'bootstrap/scss/functions';
 @import 'bootstrap/scss/variables';
 @import 'bootstrap/scss/mixins';
@@ -31,6 +33,7 @@
   @include ngx-pace-theme();
 
   @include nb-overrides();
+
 };
 
 /*Zeyad: Custom login page*/

@@ -16,6 +16,7 @@ import {
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { NbSecurityModule } from '@nebular/security';
 import { TranslateModule } from '@ngx-translate/core';
+import { FormsModule }   from '@angular/forms';
 
 import {
   FooterComponent,
@@ -54,6 +55,7 @@ const NB_MODULES = [
   NbSelectModule,
   NbIconModule,
   NbEvaIconsModule,
+
 ];
 const COMPONENTS = [
   HeaderComponent,
@@ -73,8 +75,8 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, TranslateModule, ...NB_MODULES],
-  exports: [CommonModule, TranslateModule, ...PIPES, ...COMPONENTS],
+  imports: [CommonModule, TranslateModule, ...NB_MODULES, ...[FormsModule]],
+  exports: [CommonModule, TranslateModule, ...PIPES, ...COMPONENTS, ...[FormsModule]],
   declarations: [...COMPONENTS, ...PIPES],
 })
 export class ThemeModule {

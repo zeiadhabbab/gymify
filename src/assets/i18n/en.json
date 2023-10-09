@@ -16,5 +16,9 @@
   },
   "menu":{
     "Dashboard":"Dashboard"
+  },
+  "login":{
+    "Title":"Login",
+    "Choose-Your-Language":"Choose Your Language"
   }
 }

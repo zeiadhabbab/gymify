@@ -15,5 +15,10 @@
   },
   "menu":{
     "Dashboard":"الرئيسية"
+  },
+  "login":{
+    "Title":"تسجيل دخول",
+    "Choose-Your-Language":"أختر لغتك المفضلة"
   }
+
 }

@@ -1,0 +1,20 @@
+input{
+  width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+button{
+  border-radius: 11px;
+  padding: 10px 40px;
+  color: #000;
+  width: 100%;
+}
+
+.choose-your-lang{
+  margin-top: 30px;
+  .title{
+    margin-top: 10px;
+    display: inline-block;
+  }
+}
