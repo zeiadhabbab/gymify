@@ -8,6 +8,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'menu.Settings',
+    icon: 'settings-outline',
+    children: [
+      {
+        title: 'menu.GYMSettings',
+        link: '/pages/settings/gym-settings',
+      },
+    ],
+  },
+  {
     title: 'IoT Dashboard',
     icon: 'home-outline',
     link: '/pages/iot-dashboard',

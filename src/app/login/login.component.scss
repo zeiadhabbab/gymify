@@ -1,10 +1,10 @@
-input{
+input {
   width: 100%;
   padding: 10px;
   border-radius: 5px;
 }
 
-button{
+button {
   border-radius: 6px;
   padding: 15px 40px;
   width: 100%;
@@ -14,14 +14,13 @@ button{
   border: 0;
 }
 
-.choose-your-lang{
+.choose-your-lang {
   margin-top: 30px;
-  .title{
+  .title {
     margin-top: 10px;
     display: inline-block;
   }
 }
-
 
 [nbButton][disabled], [disabled][nbButtonToggle], [nbButton].btn-disabled, .btn-disabled[nbButtonToggle] {
   background-color: #cbcbcb;

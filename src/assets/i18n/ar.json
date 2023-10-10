@@ -14,7 +14,11 @@
     "default": "فاتح"
   },
   "menu":{
-    "Dashboard":"الرئيسية"
+    "Dashboard":"الرئيسية",
+    "Settings":"إعدادات",
+    "GYMSettings":"إعدادات النادي",
+    "":"",
+    "":""
   },
   "login":{
     "Title":"تسجيل دخول",

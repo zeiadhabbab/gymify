@@ -31,4 +31,9 @@ export class AppHttpService {
     return this.httpClient.get<any>(compinedUrl , requestOptions);
   }
 
+  post(url, body){
+    let compinedUrl = `${this.baseUrl}/${url}`;
+    const requestOptions = { headers: this.headers };
+    return this.httpClient.post<any>(compinedUrl, body, requestOptions);
+  }
 }

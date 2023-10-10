@@ -1,0 +1,91 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>Gym Settings</nb-card-header>
+      <nb-card-body>
+        <form [formGroup]="settingForm" (ngSubmit)="onSubmit()">
+          <div class="row">
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="gymName" class="label">Gym name *</label>
+                <input type="text" nbInput fullWidth id="gymName" placeholder="Gym name"
+                       formControlName="gymName" [status]="(!gymName?.valid && (gymName?.dirty || gymName?.touched) === true?'danger':'basic')">
+
+                <div *ngIf="!gymName?.valid && (gymName?.dirty || gymName?.touched)" class="has-error">
+                  <div [hidden]="!gymName.errors.required">
+                    This filed is required
+                  </div>
+                  <div [hidden]="!gymName.errors.minlength">
+                    Min Length is 4
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="gymAddress" class="label">Gym address</label>
+                <input type="text" nbInput fullWidth id="gymAddress" placeholder="Gym address" formControlName="gymAddress">
+                <div *ngIf="!gymAddress?.valid && (gymAddress?.dirty || gymAddress?.touched)" class="has-error">
+                  <div [hidden]="!gymAddress.errors.required">
+                    This filed is required
+                  </div>
+                  <div [hidden]="!gymName.errors.minlength">
+                    Min Length is 4
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="telMobile" class="label">Tel/Mobile</label>
+                <input type="text" nbInput fullWidth id="telMobile" placeholder="Tel/Mobile" formControlName="telMobile">
+                <div *ngIf="!telMobile?.valid && (telMobile?.dirty || telMobile?.touched)" class="has-error">
+                  <div [hidden]="!telMobile.errors.required">
+                    This filed is required
+                  </div>
+                  <div [hidden]="!telMobile.errors.minlength">
+                    Min Length is 4
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="emailAddress" class="label">Email address</label>
+                <input type="email" nbInput fullWidth id="emailAddress" placeholder="Email address" formControlName="emailAddress">
+                <div *ngIf="!emailAddress?.valid && (emailAddress?.dirty || emailAddress?.touched)" class="has-error">
+                  <div [hidden]="!emailAddress.errors.required">
+                    This filed is required
+                  </div>
+                  <div [hidden]="!emailAddress.errors.email">
+                    Please provide valid email
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-group">
+                <label for="urlAddress" class="label">URL address</label>
+                <input type="url" nbInput fullWidth id="urlAddress" placeholder="URL address" formControlName="urlAddress">
+                <div *ngIf="!urlAddress?.valid && (urlAddress?.dirty || urlAddress?.touched)" class="has-error">
+                  <div [hidden]="!urlAddress.errors.required">
+                    This filed is required
+                  </div>
+                  <div [hidden]="!urlAddress.errors.pattern">
+                    Please provide valid url
+                  </div>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="urlAddress" class="label">Open Hour Time</label>
+                <input nbInput type="text" fullWidth [nbTimepicker]="openTime" formControlName="openTime"/>
+                <nb-timepicker #openTime withSeconds></nb-timepicker>
+              </div>
+              <div class="form-group">
+                <label for="urlAddress" class="label">Close Hour Time</label>
+                <input nbInput type="text" fullWidth [nbTimepicker]="closeTime" formControlName="closeTime"/>
+                <nb-timepicker #closeTime withSeconds></nb-timepicker>
+              </div>
+            </div>
+          </div>
+          <button type="submit" nbButton status="primary"  [disabled]="!settingForm.valid || disabledSubmit" >Submit</button>
+        </form>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+

@@ -15,7 +15,11 @@
     "default": "Light"
   },
   "menu":{
-    "Dashboard":"Dashboard"
+    "Dashboard":"Dashboard",
+    "Settings":"Settings",
+    "GYMSettings":"GYM Settings",
+    "":"",
+    "":""
   },
   "login":{
     "Title":"Login",

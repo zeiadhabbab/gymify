@@ -41,25 +41,28 @@
   display: none !important;
 }
 
-.rtl{
+.rtl {
   direction: rtl !important;
-  --font-family-primary: "Tajawal";
+  --font-family-primary: 'Tajawal';
   text-align: right;
-
+  /*
   .row {
     flex-direction: row-reverse;
-  }
+  }*/
 }
 
 [dir=rtl] {
   text-align: right;
 }
 
-.arabic{
+.arabic {
   font-family:'Tajawal';
 }
 
-.english{
+.english {
   font-family:'Open Sans';
 }
 
+.has-error {
+  color: nb-theme(color-danger-default);
+}

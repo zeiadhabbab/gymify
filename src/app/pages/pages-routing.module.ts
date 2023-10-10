@@ -19,7 +19,12 @@ const routes: Routes = [{
       component: DashboardComponent,
     },
     {
-      path: 'layout',
+      path: 'settings',
+      loadChildren: () => import('./settings/settings.module')
+        .then(m => m.SettingsModule),
+    },
+    {
+      path: 'layoutlayout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),
     },
