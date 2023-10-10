@@ -5,10 +5,13 @@ input{
 }
 
 button{
-  border-radius: 11px;
-  padding: 10px 40px;
-  color: #000;
+  border-radius: 6px;
+  padding: 15px 40px;
   width: 100%;
+  background: #2e2ed5;
+  color: #fff;
+  font-size: 22px;
+  border: 0;
 }
 
 .choose-your-lang{
@@ -17,4 +20,11 @@ button{
     margin-top: 10px;
     display: inline-block;
   }
+}
+
+
+[nbButton][disabled], [disabled][nbButtonToggle], [nbButton].btn-disabled, .btn-disabled[nbButtonToggle] {
+  background-color: #cbcbcb;
+  border-color: var(--button-filled-primary-border-color);
+  color: #535353;
 }

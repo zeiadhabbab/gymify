@@ -18,7 +18,26 @@
   },
   "login":{
     "Title":"تسجيل دخول",
-    "Choose-Your-Language":"أختر لغتك المفضلة"
-  }
+    "Choose-Your-Language":"أختر لغتك المفضلة",
+    "Email address":"عنوان البريد الإلكتروني",
+    "Password":"كلمة المرور",
+    "LogInbtn":"تسجيل دخول",
+
+    "Hooray!":"مرحبا!",
+    "Oh snap!":"حصل خطأ",
+    "Email should be the real one!":"يجب أن يكون البريد الإلكتروني حقيقيًا!",
+    "Email is required!":"البريد الالكتروني مطلوب!",
+    "Password is required!":"كلمة المرور مطلوبة!",
+    "Password should contain from 4 to 50 characters":"يجب أن تتكون كلمة المرور من 4 إلى 50 حرفًا",
+    "":"",
+    "":""
+  },
+  "Login/Email combination is not correct, please try again.":"تسجيل الدخول غير صحيح، يرجى المحاولة مرة أخرى.",
+  "You have been successfully logged in.":"قمت بتسجيل الدخول بنجاح.",
+
+
+  "":"",
+  "":"",
+  "":""
 
 }

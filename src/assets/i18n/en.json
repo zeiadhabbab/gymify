@@ -19,6 +19,24 @@
   },
   "login":{
     "Title":"Login",
-    "Choose-Your-Language":"Choose Your Language"
-  }
+    "Choose-Your-Language":"Choose Your Language",
+    "Email address":"Email address",
+    "Password":"Password",
+    "LogInbtn":"Log In",
+
+    "Hooray!":"Hooray!",
+    "Oh snap!":"Oh snap!",
+    "Email should be the real one!":"Email should be the real one!",
+    "Email is required!":"Email is required!",
+    "Password is required!":"Password is required!",
+    "Password should contain from 4 to 50 characters":"Password should contain from 4 to 50 characters",
+    "":"",
+    "":""
+  },
+  "Login/Email combination is not correct, please try again.":"Login/Email combination is not correct, please try again.",
+  "You have been successfully logged in.":"You have been successfully logged in.",
+
+  "":"",
+  "":"",
+  "":""
 }

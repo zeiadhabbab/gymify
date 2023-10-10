@@ -27,6 +27,7 @@ import {
   NbToastrModule,
   NbWindowModule,
   NbSelectModule,
+  NbIconModule,
 
 
 } from '@nebular/theme';
@@ -46,6 +47,7 @@ import {
     NbWindowModule.forRoot(),
     NbToastrModule.forRoot(),
     NbSelectModule,
+    NbIconModule,
     NbChatModule.forRoot({
       messageGoogleMapKey: 'AIzaSyA_wNuCzia92MAmdLRzmqitRGvCF7wCZPY',
     }),
