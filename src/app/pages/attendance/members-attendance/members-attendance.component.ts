@@ -14,7 +14,7 @@ import {AppHttpService} from "../../../@core/utils/http.service";
   templateUrl: './members-attendance.component.html',
 })
 
-export class MembersAttendanceComponent implements OnInit{
+export class MembersAttendanceComponent implements AfterViewInit{
   totalMemebrs = 0;
   settings = {
     actions: false,
@@ -70,9 +70,6 @@ export class MembersAttendanceComponent implements OnInit{
 
 
 
-  }
-
-  ngOnInit(){
   }
 
   ngAfterViewInit(){
