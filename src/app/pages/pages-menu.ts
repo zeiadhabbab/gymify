@@ -8,6 +8,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     home: true,
   },
   {
+    title: 'menu.Attendance',
+    icon: 'calendar-outline',
+    children: [
+      {
+        title: 'menu.MembersAttendance',
+        link: '/pages/attendance/members-attendance',
+      },
+    ],
+  },
+  {
     title: 'menu.Settings',
     icon: 'settings-outline',
     children: [
@@ -18,13 +28,13 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'FEATURES',
+    group: true,
+  },
+  {
     title: 'IoT Dashboard',
     icon: 'home-outline',
     link: '/pages/iot-dashboard',
-  },
-  {
-    title: 'FEATURES',
-    group: true,
   },
   {
     title: 'Layout',

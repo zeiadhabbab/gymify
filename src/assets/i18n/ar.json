@@ -17,7 +17,8 @@
     "Dashboard":"الرئيسية",
     "Settings":"إعدادات",
     "GYMSettings":"إعدادات النادي",
-    "":"",
+    "Attendance":"الحضور",
+    "MembersAttendance":"حضور الأعضاء",
     "":""
   },
   "login":{
@@ -45,6 +46,10 @@
     "OpenHourTime":"وقت فتح النادي",
     "CloseHourTime":"وقت اغلاق النادي",
     "currencySymbol":"رمز العملة"
+  },
+  "MembersAttendancePage":{
+    "title": "حضور الأعضاء",
+    "": ""
   },
   "general":{
     "submit":"حفظ",

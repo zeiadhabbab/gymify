@@ -17,7 +17,8 @@
     "Dashboard":"Dashboard",
     "Settings":"Settings",
     "GYMSettings":"GYM Settings",
-    "":"",
+    "Attendance":"Attendance",
+    "MembersAttendance":"Members Attendance",
     "":""
   },
   "login":{
@@ -51,6 +52,10 @@
     "OpenHourTime":"Open Hour Time",
     "CloseHourTime":"Close Hour Time",
     "currencySymbol":"Currency Symbol"
+  },
+  "MembersAttendancePage":{
+    "title": "Members Attendance",
+    "": ""
   },
   "general":{
     "submit":"Submit",

@@ -16,3 +16,13 @@
     }
   }
 }
+
+
+
+::ng-deep nb-menu .menu-item .menu-icon {
+  margin: 0 0.5rem 0 !important;
+}
+
+::ng-deep nb-menu .menu-item .expand-state {
+  transform: scale(-1, 1);
+}

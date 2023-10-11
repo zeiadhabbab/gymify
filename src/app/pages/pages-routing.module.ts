@@ -24,6 +24,11 @@ const routes: Routes = [{
         .then(m => m.SettingsModule),
     },
     {
+      path: 'attendance',
+      loadChildren: () => import('./attendance/attendance.module')
+        .then(m => m.AttendanceModule),
+    },
+    {
       path: 'layoutlayout',
       loadChildren: () => import('./layout/layout.module')
         .then(m => m.LayoutModule),
