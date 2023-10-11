@@ -6,7 +6,6 @@
     "Active-Members": "Active Members",
     "Today-Attendance": "Today Attendance",
     "Payment-Overdue": "Payment Overdue",
-
     "": "",
     "": ""
   },
@@ -27,7 +26,6 @@
     "Email address":"Email address",
     "Password":"Password",
     "LogInbtn":"Log In",
-
     "Hooray!":"Hooray!",
     "Oh snap!":"Oh snap!",
     "Email should be the real one!":"Email should be the real one!",
@@ -35,11 +33,41 @@
     "Password is required!":"Password is required!",
     "Password should contain from 4 to 50 characters":"Password should contain from 4 to 50 characters",
     "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":"",
+    "":""
+  },
+  "GymSettingsPage":{
+    "title":"Gym Settings",
+    "Gymname":"Gym name",
+    "Gymaddress":"Gym address",
+    "TelMobile":"Tel/Mobile",
+    "Emailaddress":"Email address",
+    "URLaddress":"URL address",
+    "OpenHourTime":"Open Hour Time",
+    "CloseHourTime":"Close Hour Time",
+    "currencySymbol":"Currency Symbol"
+  },
+  "general":{
+    "submit":"Submit",
+    "successfully":"Data saved successfully",
+    "Success":"Success",
+    "":""
+  },
+  "validation":{
+    "required":"This field is required",
+    "url":" Please provide valid url",
+    "email":"Please provide valid email",
+    "minlength":"Min Length is",
+    "maxlength":"Max Length is",
     "":""
   },
   "Login/Email combination is not correct, please try again.":"Login/Email combination is not correct, please try again.",
   "You have been successfully logged in.":"You have been successfully logged in.",
-
   "":"",
   "":"",
   "":""

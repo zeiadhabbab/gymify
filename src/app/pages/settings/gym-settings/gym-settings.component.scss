@@ -13,3 +13,8 @@ nb-checkbox {
 nb-card.inline-form-card nb-card-body {
   padding-bottom: 0;
 }
+
+
+::ng-deep .saveToast {
+  margin-bottom: 80px !important;
+}

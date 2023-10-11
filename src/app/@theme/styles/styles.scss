@@ -66,3 +66,8 @@
 .has-error {
   color: nb-theme(color-danger-default);
 }
+
+
+.rtl .toastr-overlay-container.cdk-global-overlay-wrapper{
+  justify-content: flex-end !important;
+}

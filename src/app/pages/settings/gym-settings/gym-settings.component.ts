@@ -3,8 +3,7 @@ import { UserService } from 'app/@core/utils/user.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import * as moment from 'moment';
 import { NbGlobalPhysicalPosition, NbToastrService } from '@nebular/theme';
-
-
+import { TranslateService } from "@ngx-translate/core";
 
 interface GymSettings {
   id : number;
@@ -13,6 +12,7 @@ interface GymSettings {
   telMobile: string;
   emailAddress: string;
   urlAddress: string;
+  currencySymbol: string;
   openTime: any;
   closeTime: any;
 }
@@ -24,10 +24,10 @@ interface GymSettingsDB {
   club_phone: string;
   club_email: string;
   club_site: string;
+  currency_symbol: string;
   start_time: any;
   end_time: any;
 }
-
 
 @Component({
   selector: 'ngx-gym-settings-component',
@@ -48,11 +48,12 @@ export class GymSettingsComponent implements OnInit{
     telMobile: '',
     emailAddress: '',
     urlAddress: '',
+    currencySymbol: '',
     openTime: new Date(),
     closeTime: new Date()
   }
 
-  constructor(private userService: UserService, private toastrService: NbToastrService){
+  constructor(private userService: UserService, private toastrService: NbToastrService, private translate: TranslateService){
     /**
      * Create From for Gym Settings
      * */
@@ -69,6 +70,7 @@ export class GymSettingsComponent implements OnInit{
       this.gymSettings.telMobile = data['club_phone'];
       this.gymSettings.emailAddress = data['club_email'];
       this.gymSettings.urlAddress = data['club_site'];
+      this.gymSettings.currencySymbol = data['currency_symbol'];
       this.gymSettings.openTime =  new Date("Fri, 26 Sep 2021 " + data['start_time']);
       this.gymSettings.closeTime = new Date("Fri, 26 Sep 2021 " + data['end_time']);
 
@@ -95,6 +97,7 @@ export class GymSettingsComponent implements OnInit{
       telMobile:  new FormControl('', [Validators.required,Validators.minLength(4)]),
       emailAddress: new FormControl('', [Validators.email,Validators.required]),
       urlAddress: new FormControl('', [Validators.required,Validators.pattern('(https?://)?([\\da-z.-]+)\\.([a-z.]{2,6})[/\\w .-]*/?')]),
+      currencySymbol: new FormControl('', [Validators.required]),
       openTime: new FormControl(),
       closeTime: new FormControl(),
     });
@@ -108,6 +111,7 @@ export class GymSettingsComponent implements OnInit{
     this.settingForm.controls['urlAddress'].setValue(gymSettings.urlAddress);
     this.settingForm.controls['openTime'].setValue(gymSettings.openTime);
     this.settingForm.controls['closeTime'].setValue(gymSettings.closeTime);
+    this.settingForm.controls['currencySymbol'].setValue(gymSettings.currencySymbol);
     this.disabledSubmit = true;
   }
 
@@ -124,22 +128,26 @@ export class GymSettingsComponent implements OnInit{
       club_phone: fromData.telMobile,
       club_email: fromData.emailAddress,
       club_site: fromData.urlAddress,
+      currency_symbol: fromData.currencySymbol,
       start_time: moment(this.gymSettings.openTime).format('HH:mm:ss'),
       end_time: moment(this.gymSettings.closeTime).format('HH:mm:ss')
     }
 
     this.userService.updateGymSettings(this.newGymSettingsData).subscribe((data)=> {
-      this.showToast(this.positions.TOP_RIGHT, 'success');
+      this.showToast(this.positions.BOTTOM_LEFT, 'success', this.translate.instant('general.Success'));
       this.disabledSubmit = false;
     },(error) => {
-      this.showToast(this.positions.TOP_RIGHT, 'success');
+      this.showToast(this.positions.BOTTOM_LEFT, 'success', this.translate.instant('general.Success'));
       this.disabledSubmit = false;
     });
 
   }
 
-  showToast(position, status) {
-    this.toastrService.show(status || 'Success', `Data saved successfully`, { position, status });
+  showToast(position, status, statusText) {
+    let toastClass  = 'saveToast';
+    let preventDuplicates = true;
+    let duration  = 3000;
+    this.toastrService.show(statusText, this.translate.instant('general.successfully'), {duration , position, status ,toastClass, preventDuplicates});
   }
 
   get gymName(){
@@ -168,5 +176,8 @@ export class GymSettingsComponent implements OnInit{
 
   get closeTime(){
     return this.settingForm.get('closeTime');
+  }
+  get currencySymbol(){
+    return this.settingForm.get('currencySymbol');
   }
 }

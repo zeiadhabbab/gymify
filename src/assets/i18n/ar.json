@@ -26,7 +26,6 @@
     "Email address":"عنوان البريد الإلكتروني",
     "Password":"كلمة المرور",
     "LogInbtn":"تسجيل دخول",
-
     "Hooray!":"مرحبا!",
     "Oh snap!":"حصل خطأ",
     "Email should be the real one!":"يجب أن يكون البريد الإلكتروني حقيقيًا!",
@@ -36,10 +35,33 @@
     "":"",
     "":""
   },
+  "GymSettingsPage":{
+    "title":"اعدادات النادي",
+    "Gymname":"اسم النادي",
+    "Gymaddress":"عنوان النادي",
+    "TelMobile":"رقم النقال / الهاتف",
+    "Emailaddress":"البريد الالكتروني",
+    "URLaddress":"الموقع الالكتروني",
+    "OpenHourTime":"وقت فتح النادي",
+    "CloseHourTime":"وقت اغلاق النادي",
+    "currencySymbol":"رمز العملة"
+  },
+  "general":{
+    "submit":"حفظ",
+    "successfully":"تم حفظ المعلومات بنجاح",
+    "Success":"نجحة العملية",
+    "":""
+  },
+  "validation":{
+    "required":"هذه الخانة مطلوبة",
+    "url":" يرجى تقديم عنوان URL صالح",
+    "email":"يرجى تقديم بريد إلكتروني صالح",
+    "minlength":"الحد الأدنى لعدد الأحرف هو",
+    "maxlength":"الحد الأعلى لعدد الأحرف هو",
+    "":""
+  },
   "Login/Email combination is not correct, please try again.":"تسجيل الدخول غير صحيح، يرجى المحاولة مرة أخرى.",
   "You have been successfully logged in.":"قمت بتسجيل الدخول بنجاح.",
-
-
   "":"",
   "":"",
   "":""
