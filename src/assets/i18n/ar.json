@@ -49,6 +49,13 @@
   },
   "MembersAttendancePage":{
     "title": "حضور الأعضاء",
+    "id": "رقم العضو",
+    "attended": "الحضور",
+    "phone": "رقم الهاتف",
+    "name": "اسم العضو",
+    "choose-attended-date": "اختر يوم الحضور",
+    "attended-date": "يوم الحضور",
+    "TotalMembersCount": "مجموع الأعضاء",
     "": ""
   },
   "general":{
@@ -67,7 +74,7 @@
   },
   "Login/Email combination is not correct, please try again.":"تسجيل الدخول غير صحيح، يرجى المحاولة مرة أخرى.",
   "You have been successfully logged in.":"قمت بتسجيل الدخول بنجاح.",
-  "":"",
+  "Nodatafound":"لا يوجد نتائج",
   "":"",
   "":""
 

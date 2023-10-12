@@ -29,5 +29,8 @@ export class MemebersService   {
     return this.httpService.get(`payments/payment_overdue.php`);
   }
 
+  public changeMemberAttendedStatus(date, memberId ){
+    return this.httpService.get(`members_attandance/payment_overdue.php`);
+  }
 
 }

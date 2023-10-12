@@ -1,11 +1,23 @@
 <div class="row">
   <div class="col-md-12">
     <nb-card>
+      <nb-card-header>{{ 'MembersAttendancePage.attended-date' | translate }}</nb-card-header>
+      <nb-card-body>
+        <label for="date">{{ 'MembersAttendancePage.choose-attended-date' | translate }}</label>: &nbsp;
+          <input nbInput
+                 id="date"
+               placeholder="{{ 'MembersAttendancePage.attended-date' | translate }}"
+               [value]="selectedDate"
+               [nbDatepicker]="formpicker">
+        <nb-datepicker #formpicker (dateChange)="dateChange($event)"></nb-datepicker>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
       <nb-card-header>{{'MembersAttendancePage.title' | translate}}</nb-card-header>
       <nb-card-body>
         <ng2-smart-table [settings]="settings" [source]="source">
         </ng2-smart-table>
-        <div class="">Total Members Count: {{ totalMemebrs }} </div>
+        <div class="">{{ 'MembersAttendancePage.TotalMembersCount' | translate }}: {{ totalMemebrs }} </div>
       </nb-card-body>
     </nb-card>
   </div>
