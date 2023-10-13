@@ -30,7 +30,12 @@ export class MemebersService   {
   }
 
   public changeMemberAttendedStatus(date, memberId ){
-    return this.httpService.get(`members_attandance/payment_overdue.php`);
+    let body = {
+      member_id:memberId,
+      date:date
+    };
+
+    return this.httpService.post(`/members_attandance/create_member_attendance.php`, body);
   }
 
 }

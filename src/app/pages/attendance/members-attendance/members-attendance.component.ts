@@ -19,38 +19,10 @@ declare var Pace:any;
 
 export class MembersAttendanceComponent implements AfterViewInit{
   totalMemebrs = 0;
+
   selectedDate = moment(new Date()).format('YYYY-MM-DD');
-  settings = {
-    actions: false,
-    noDataMessage: this.translate.instant('Nodatafound'),
-    pager:{
-      perPage: 20
-    },
-    columns: {
-      member_id: {
-        title: this.translate.instant('MembersAttendancePage.id'),
-        type: 'number',
-      },
-      name: {
-        title: this.translate.instant('MembersAttendancePage.name'),
-        type: 'string',
-      },
-      phone: {
-        title: this.translate.instant('MembersAttendancePage.phone'),
-        type: 'string',
-      },
-      attended: {
-        title: this.translate.instant('MembersAttendancePage.attended'),
-        type: 'custom',
-        renderComponent: CustomCheckboxComponent,
-        onComponentInitFunction(instance) {
-            instance.save.subscribe(row => {
-                this.changeMemberAttendedStatus(row);
-            });
-        }
-     },
-    },
-  };
+  today = moment(new Date()).format('YYYY-MM-DD');
+  settings;
 
 
 
@@ -66,8 +38,7 @@ export class MembersAttendanceComponent implements AfterViewInit{
     this.token = '';
     this._httpClient = httpClient;
     this._appHttpService = appHttpService;
-
-
+    let parent = this;
     this.authService.onTokenChange()
         .subscribe((token: NbAuthJWTToken) => {
 
@@ -80,7 +51,41 @@ export class MembersAttendanceComponent implements AfterViewInit{
       }
     });
 
+    this.settings = {
+        actions: false,
+        noDataMessage: this.translate.instant('Nodatafound'),
+        pager:{
+            perPage: 20
+        },
+        columns: {
+            member_id: {
+                title: this.translate.instant('MembersAttendancePage.id'),
+                type: 'number',
+            },
+            name: {
+                title: this.translate.instant('MembersAttendancePage.name'),
+                type: 'string',
+            },
+            phone: {
+                title: this.translate.instant('MembersAttendancePage.phone'),
+                type: 'string',
+            },
+            attended: {
+                title: this.translate.instant('MembersAttendancePage.attended'),
+                type: 'custom',
+                filter: false,
+                renderComponent: CustomCheckboxComponent,
+                onComponentInitFunction(instance) {
+                    instance.save.subscribe(row => {
+                        parent.changeMemberAttendedStatus(row);
+                    });
+                }
+            },
+        },
+    };
+
     this.translate.onLangChange.subscribe((event: LangChangeEvent) => {
+        let parent = this;
         this.settings = {
             actions: false,
             noDataMessage: this.translate.instant('Nodatafound'),
@@ -103,10 +108,11 @@ export class MembersAttendanceComponent implements AfterViewInit{
                 attended: {
                     title: this.translate.instant('MembersAttendancePage.attended'),
                     type: 'custom',
+                    filter: false,
                     renderComponent: CustomCheckboxComponent,
                     onComponentInitFunction(instance) {
                         instance.save.subscribe(row => {
-                            this.changeMemberAttendedStatus(row);
+                            parent.changeMemberAttendedStatus(row);
                         });
                     }
                 },
@@ -137,7 +143,10 @@ export class MembersAttendanceComponent implements AfterViewInit{
   }
 
   changeMemberAttendedStatus(row){
-    this.memebersService.changeMemberAttendedStatus(this.selectedDate, row);
+    Pace.restart();
+    this.memebersService.changeMemberAttendedStatus(this.selectedDate, row.member_id).subscribe((data)=>{
+        console.log(data);
+    });
   }
 
 

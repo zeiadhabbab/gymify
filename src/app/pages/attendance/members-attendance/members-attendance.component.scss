@@ -18,3 +18,9 @@ nb-card.inline-form-card nb-card-body {
 ::ng-deep .saveToast {
   margin-bottom: 80px !important;
 }
+
+
+::ng-deep  nb-toggle.status-success .native-input:disabled + .toggle {
+  background-color: var(--toggle-success-checked-background-color);
+  border-color: var(--toggle-success-checked-border-color);
+}

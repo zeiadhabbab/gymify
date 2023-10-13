@@ -81,6 +81,8 @@
   "Login/Email combination is not correct, please try again.":"Login/Email combination is not correct, please try again.",
   "You have been successfully logged in.":"You have been successfully logged in.",
   "Nodatafound":"No Data Found",
+  "or":"Or",
+  "today":"Today",
   "":"",
   "":""
 }

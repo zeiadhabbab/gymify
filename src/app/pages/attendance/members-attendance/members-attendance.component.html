@@ -10,6 +10,9 @@
                [value]="selectedDate"
                [nbDatepicker]="formpicker">
         <nb-datepicker #formpicker (dateChange)="dateChange($event)"></nb-datepicker>
+        &nbsp;&nbsp;{{ 'or' | translate }}&nbsp;&nbsp; <button nbButton status="info"
+        [disabled]="selectedDate === today" (click)="dateChange(today)"
+      >{{ 'today' | translate }}</button>
       </nb-card-body>
     </nb-card>
     <nb-card>

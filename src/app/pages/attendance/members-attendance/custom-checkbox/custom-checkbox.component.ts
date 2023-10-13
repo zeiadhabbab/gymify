@@ -3,7 +3,7 @@ import { ViewCell } from 'ng2-smart-table';
 
 @Component({
     template: `
-    <nb-toggle [(ngModel)]="value" status="success" (checkedChange)="checkedChange($event)"></nb-toggle>
+    <nb-toggle [(ngModel)]="value" [disabled]="value == true" status="success" (checkedChange)="checkedChange($event)"></nb-toggle>
   `,
 })
 export class CustomCheckboxComponent implements ViewCell {
