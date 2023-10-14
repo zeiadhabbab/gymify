@@ -15,6 +15,10 @@ export const MENU_ITEMS: NbMenuItem[] = [
         title: 'menu.MembersAttendance',
         link: '/pages/attendance/members-attendance',
       },
+      {
+        title: 'menu.MembersAttendanceReport',
+        link: '/pages/attendance/members-attendance-report',
+      },
     ],
   },
   {

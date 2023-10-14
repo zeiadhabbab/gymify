@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 import { AttendanceComponent } from './attendance.component';
 import { MembersAttendanceComponent } from './members-attendance/members-attendance.component';
+import { MembersAttendanceReportComponent } from "./members-attendance-report/members-attendance-report.component";
 
 
 const routes: Routes = [{
@@ -12,6 +13,9 @@ const routes: Routes = [{
     {
       path: 'members-attendance',
       component: MembersAttendanceComponent,
+    },{
+      path: 'members-attendance-report',
+      component: MembersAttendanceReportComponent,
     },
 
   ],

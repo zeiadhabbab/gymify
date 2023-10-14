@@ -19,6 +19,7 @@
     "GYMSettings":"GYM Settings",
     "Attendance":"Attendance",
     "MembersAttendance":"Members Attendance",
+    "MembersAttendanceReport":"Members Attendance Report",
     "":""
   },
   "login":{
@@ -64,6 +65,18 @@
     "TotalMembersCount": "Total Members Count",
     "": ""
   },
+  "MembersAttendanceReportPage":{
+    "title": "Members Attendance Report",
+    "id": "Members ID",
+    "attended": "Attended",
+    "phone": "Members Phone",
+    "name": "Members Name",
+    "choose-attended-date-range": "Choose Attended Date Range",
+    "TotalMembersCount": "Total Members Count",
+    "date": "Date",
+    "time": "Time",
+    "": ""
+  },
   "general":{
     "submit":"Submit",
     "successfully":"Data saved successfully",
@@ -83,6 +96,9 @@
   "Nodatafound":"No Data Found",
   "or":"Or",
   "today":"Today",
-  "":"",
+  "filter-result":"Filter Results",
+  "from":"From",
+  "to":"To",
+  "total-result":"Total Results",
   "":""
 }

@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>{{ 'filter-result' | translate }}</nb-card-header>
+      <nb-card-body>
+        <label for="fromDate">
+          {{ 'MembersAttendanceReportPage.choose-attended-date-range' | translate }} - {{ 'from' | translate }}</label>:&nbsp; &nbsp;
+
+        <input nbInput
+                 id="fromDate"
+               placeholder="{{ 'MembersAttendanceReportPage.attended-date' | translate }}"
+               [value]="selectedFromDate"
+               [nbDatepicker]="frompicker">
+
+
+        <nb-datepicker #frompicker (dateChange)="dateChange($event, selectedToDate)"></nb-datepicker>
+
+        <label for="toDate"> &nbsp;{{ 'to' | translate }}</label>:&nbsp;
+
+        <input nbInput
+               id="toDate"
+               placeholder="{{ 'MembersAttendanceReportPage.attended-date' | translate }}"
+               [value]="selectedToDate"
+               [nbDatepicker]="topicker">
+
+        <nb-datepicker #topicker (dateChange)="dateChange(selectedFromDate, $event)"></nb-datepicker>
+
+        &nbsp;&nbsp;{{ 'or' | translate }}&nbsp;&nbsp; <button nbButton status="info"
+        [disabled]="selectedFromDate === today && selectedToDate === today" (click)="dateChange(today, today)"
+      >{{ 'today' | translate }}</button>
+      </nb-card-body>
+    </nb-card>
+    <nb-card>
+      <nb-card-header>{{'MembersAttendanceReportPage.title' | translate}}</nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source">
+        </ng2-smart-table>
+        <div class="">{{ 'total-result' | translate }}: {{ totalMemebrs }} </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+

@@ -18,11 +18,12 @@ import {
 import { ThemeModule } from '../../@theme/theme.module';
 import { AttendanceRoutingModule } from './attendance-routing.module';
 import { AttendanceComponent } from './attendance.component';
-import { CustomServerDataSource } from './members-attendance/serve.data-source';
+import { CustomServerDataSource } from '../../@core/utils/serve.data-source';
 import { MembersAttendanceComponent } from './members-attendance/members-attendance.component';
 import { CustomCheckboxComponent } from './members-attendance/custom-checkbox/custom-checkbox.component';
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
+import { MembersAttendanceReportComponent } from "./members-attendance-report/members-attendance-report.component";
 
 
 @NgModule({
@@ -49,7 +50,8 @@ import { Ng2SmartTableModule } from 'ng2-smart-table';
   declarations: [
     AttendanceComponent,
     MembersAttendanceComponent,
-    CustomCheckboxComponent
+    CustomCheckboxComponent,
+    MembersAttendanceReportComponent
 
   ],
   providers: [

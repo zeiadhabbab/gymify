@@ -2,7 +2,7 @@ import {Injectable, EventEmitter} from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import {LocalDataSource, ServerDataSource} from 'ng2-smart-table';
 import { map } from 'rxjs/operators';
-import {AppHttpService} from "../../../@core/utils/http.service";
+import {AppHttpService} from "./http.service";
 
 @Injectable()
 export class CustomServerDataSource extends ServerDataSource {

@@ -19,6 +19,7 @@
     "GYMSettings":"إعدادات النادي",
     "Attendance":"الحضور",
     "MembersAttendance":"حضور الأعضاء",
+    "MembersAttendanceReport":"تقرير حضور الأعضاء",
     "":""
   },
   "login":{
@@ -58,6 +59,19 @@
     "TotalMembersCount": "مجموع الأعضاء",
     "": ""
   },
+  "MembersAttendanceReportPage":{
+    "title": "تقرير حضور الأعضاء",
+    "id": "رقم العضو",
+    "attended": "الحضور",
+    "phone": "رقم الهاتف",
+    "name": "اسم العضو",
+    "choose-attended-date-range": "اختر أيام الحضور",
+    "TotalMembersCount": "مجموع الأعضاء",
+    "date": "تاريخ اليوم",
+    "time": "الساعة",
+
+    "": ""
+  },
   "general":{
     "submit":"حفظ",
     "successfully":"تم حفظ المعلومات بنجاح",
@@ -77,6 +91,10 @@
   "Nodatafound":"لا يوجد نتائج",
   "or":"أو",
   "today":"اليوم",
+  "filter-result":"تصفية النتائج",
+  "from":"من",
+  "to":"الى",
+  "total-result":"مجموع النتائج",
   "":"",
   "":""
 
