@@ -6,7 +6,8 @@
   </div>
 
   <div class="col-xxxl-3 col-md-3">
-    <ngx-status-card [title]="todayAttendanceCard.title | translate" [type]="todayAttendanceCard.type" [subText]="todayAttendanceCount">
+    <ngx-status-card [title]="todayAttendanceCard.title | translate" [type]="todayAttendanceCard.type"
+                     [subText]="todayAttendanceCount" [link]="'/pages/attendance/members-attendance'" class="pinter">
       <nb-icon [ngClass]="todayAttendanceCard.iconClass" [icon]="todayAttendanceCard.iconClass" pack="eva"></nb-icon>
     </ngx-status-card>
   </div>

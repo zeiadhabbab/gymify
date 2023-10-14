@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'ngx-status-card',
@@ -24,8 +25,14 @@ export class StatusCardComponent {
   @Input() type: string;
   @Input() on = true;
   @Input() subText: any;
+  @Input() link: any = '';
+
+  constructor( private router: Router ){ }
 
   goToScreen(){
-    console.log();
+    if(this.link != ''){
+      this.router.navigate([this.link]);
+
+    }
   }
 }

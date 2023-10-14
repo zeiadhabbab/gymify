@@ -35,7 +35,7 @@ export class MemebersService   {
       date:date
     };
 
-    return this.httpService.post(`/members_attandance/create_member_attendance.php`, body);
+    return this.httpService.post(`members_attandance/create_member_attendance.php`, body);
   }
 
 }
