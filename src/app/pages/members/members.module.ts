@@ -16,14 +16,11 @@ import {
 } from '@nebular/theme';
 
 import { ThemeModule } from '../../@theme/theme.module';
-import { AttendanceRoutingModule } from './attendance-routing.module';
-import { AttendanceComponent } from './attendance.component';
+import { MembersRoutingModule } from './members-routing.module';
 import { CustomServerDataSource } from '../../@core/utils/serve.data-source';
-import { MembersAttendanceComponent } from './members-attendance/members-attendance.component';
-import { CustomCheckboxComponent } from '../../@theme/components/custom-checkbox/custom-checkbox.component';
-
+import { MembersComponent } from './members.component';
 import { Ng2SmartTableModule } from 'ng2-smart-table';
-import { MembersAttendanceReportComponent } from "./members-attendance-report/members-attendance-report.component";
+import {AllMembersComponent} from "./all-members/all-members.component";
 
 
 @NgModule({
@@ -31,7 +28,7 @@ import { MembersAttendanceReportComponent } from "./members-attendance-report/me
     FormsModule,
     ReactiveFormsModule,
     ThemeModule,
-    AttendanceRoutingModule,
+    MembersRoutingModule,
     ThemeModule,
     NbInputModule,
     NbCardModule,
@@ -48,14 +45,12 @@ import { MembersAttendanceReportComponent } from "./members-attendance-report/me
     NbToggleModule,
   ],
   declarations: [
-    AttendanceComponent,
-    MembersAttendanceComponent,
-    CustomCheckboxComponent,
-    MembersAttendanceReportComponent
+    MembersComponent,
+    AllMembersComponent,
 
   ],
   providers: [
     CustomServerDataSource
   ],
 })
-export class AttendanceModule { }
+export class MembersModule { }

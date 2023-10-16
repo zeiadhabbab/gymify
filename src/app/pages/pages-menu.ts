@@ -22,6 +22,16 @@ export const MENU_ITEMS: NbMenuItem[] = [
     ],
   },
   {
+    title: 'menu.Members',
+    icon: 'people-outline',
+    children: [
+      {
+        title: 'menu.AllMembers',
+        link: '/pages/members/all-members',
+      }
+    ],
+  },
+  {
     title: 'menu.Settings',
     icon: 'settings-outline',
     children: [

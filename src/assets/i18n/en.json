@@ -20,6 +20,8 @@
     "Attendance":"Attendance",
     "MembersAttendance":"Members Attendance",
     "MembersAttendanceReport":"Members Attendance Report",
+    "Members":"Members",
+    "AllMembers":"All Members",
     "":""
   },
   "login":{
@@ -77,6 +79,25 @@
     "time": "Time",
     "": ""
   },
+  "Members":{
+    "title": "All Members",
+    "id": "Members ID",
+    "phone": "Phone",
+    "name": "Name",
+    "gender": "Gender",
+    "age": "Age",
+    "employee": "Responsible",
+    "session_id": "Session",
+    "account_type": "Account Type",
+    "status": "Status",
+    "membership": "Membership",
+    "freez_status": "Freezed",
+    "name": "Name",
+    "choose-attended-date": "Choose Attended Date",
+    "attended-date": "Attended Date",
+    "TotalMembersCount": "Total Members Count",
+    "": ""
+  },
   "general":{
     "submit":"Submit",
     "successfully":"Data saved successfully",
@@ -100,5 +121,17 @@
   "from":"From",
   "to":"To",
   "total-result":"Total Results",
+  "Select":"Select",
+  "Male":"Male",
+  "Female":"Female",
+  "Partial":"Partial",
+  "Full":"Full",
+  "Enable":"Enable",
+  "Disable":"Disable",
+  "Froze":"Froze",
+  "Notfroze":"Not Froze",
+  "Evening":"Evening",
+  "Morning":"Morning",
+  "":"",
   "":""
 }

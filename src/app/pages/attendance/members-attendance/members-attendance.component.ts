@@ -1,5 +1,5 @@
 import { Component, OnInit, AfterViewInit } from '@angular/core';
-import { CustomCheckboxComponent } from './custom-checkbox/custom-checkbox.component';
+import { CustomCheckboxComponent } from '../../../@theme/components/custom-checkbox/custom-checkbox.component';
 import { ServerDataSource} from 'ng2-smart-table';
 import { HttpHeaders} from '@angular/common/http';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';

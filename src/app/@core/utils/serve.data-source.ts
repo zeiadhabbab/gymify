@@ -48,4 +48,9 @@ export class CustomServerDataSource extends ServerDataSource {
                 })
             ).toPromise();
     }
+
+    public onSaveConfirm(event: any): void {
+        const item = event.newData;
+
+    }
 }

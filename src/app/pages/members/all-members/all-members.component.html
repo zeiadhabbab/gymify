@@ -1,0 +1,45 @@
+<div class="row">
+  <div class="col-md-12">
+    <nb-card>
+      <nb-card-header>{{'Members.title' | translate}}</nb-card-header>
+      <nb-card-body>
+        <ng2-smart-table [settings]="settings" [source]="source"
+                         (edit)="editRow($event)"
+                         (delete)="deleteRow($event)"
+                         (deleteConfirm)="onDeleteConfirm($event)"
+                         >
+        </ng2-smart-table>
+        <div class="">{{ 'MembersAttendancePage.TotalMembersCount' | translate }}: {{ totalMemebrs }} </div>
+      </nb-card-body>
+    </nb-card>
+  </div>
+</div>
+
+<ng-template #editDialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Edit Member</nb-card-header>
+    <nb-card-body>{{ data }}</nb-card-body>
+    <nb-card-footer>
+      <button nbButton (click)="ref.close()">Close Dialog</button>
+      <button nbButton (click)="ref.close()">Close Dialog</button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+<ng-template #deleteDialog let-data let-ref="dialogRef">
+  <nb-card>
+    <nb-card-header>Delete Member</nb-card-header>
+    <nb-card-body>{{ data }}</nb-card-body>
+    <nb-card-footer class="direction-left">
+      <button nbButton (click)="ref.close()" status="primary">Yes</button>
+      <span>&nbsp;</span>
+      <button nbButton (click)="ref.close()" status="basic">No</button>
+    </nb-card-footer>
+  </nb-card>
+</ng-template>
+
+
+
+<ng-template #disabledEsc>
+  Disabled close on escape click.
+</ng-template>

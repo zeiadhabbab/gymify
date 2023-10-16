@@ -20,6 +20,10 @@
     "Attendance":"الحضور",
     "MembersAttendance":"حضور الأعضاء",
     "MembersAttendanceReport":"تقرير حضور الأعضاء",
+    "Members":"الاعضاء",
+    "AllMembers":"جميع الأعضاء",
+    "":"",
+    "":"",
     "":""
   },
   "login":{
@@ -72,6 +76,25 @@
 
     "": ""
   },
+  "Members":{
+    "title": "جميع الأعضاء",
+    "id": "رقم العضو",
+    "phone": "الهاتف",
+    "name": "الاسم",
+    "gender": "الجنس",
+    "age": "العمر",
+    "employee": "المسؤول",
+    "session_id": "الجلسة",
+    "account_type": "الاشتراك",
+    "status": "الحالة",
+    "freez_status": "التجميد",
+    "membership": "العضوية",
+    "choose-attended-date": "Choose Attended Date",
+    "attended-date": "Attended Date",
+    "TotalMembersCount": "Total Members Count",
+    "TotalMembersCount": "Total Members Count",
+    "": ""
+  },
   "general":{
     "submit":"حفظ",
     "successfully":"تم حفظ المعلومات بنجاح",
@@ -95,7 +118,17 @@
   "from":"من",
   "to":"الى",
   "total-result":"مجموع النتائج",
-  "":"",
+  "Select":"أختر",
+  "Male":"ذكر",
+  "Female":"انثى",
+  "Partial":"جزئي",
+  "Full":"كلي",
+  "Enable":"فعال",
+  "Disable":"غير فعال",
+  "Froze":"مجمد",
+  "Notfroze":"غير مجمد",
+  "Evening":"مسائي",
+  "Morning":"صباحي",
   "":""
 
 }
