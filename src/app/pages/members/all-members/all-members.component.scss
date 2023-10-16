@@ -29,10 +29,10 @@ nb-card.inline-form-card nb-card-body {
   display: none !important;
 }
 
-.direction-left{
+.direction-left {
   text-align: right;
 }
 
-::ng-deep .rtl .direction-left{
+::ng-deep .rtl .direction-left {
   text-align: left !important;
 }
