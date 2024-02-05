@@ -1,5 +1,4 @@
 import {Component, OnInit, AfterViewInit, TemplateRef, ViewChild} from '@angular/core';
-import { CustomCheckboxComponent } from '../../../@theme/components/custom-checkbox/custom-checkbox.component';
 import { ServerDataSource} from 'ng2-smart-table';
 import { HttpHeaders} from '@angular/common/http';
 import { NbAuthJWTToken, NbAuthService } from '@nebular/auth';
@@ -10,6 +9,7 @@ import { TranslateService, LangChangeEvent } from "@ngx-translate/core";
 import * as moment from 'moment';
 import { MemebersService } from "../../../@core/utils/members.service";
 import {NbDialogService} from "@nebular/theme";
+import {CustomCheckboxADComponent} from "../../../@theme/components/custom-checkbox/custom-checkbox-ad.component";
 declare var Pace:any;
 
 @Component({
@@ -196,7 +196,7 @@ export class AllMembersComponent implements AfterViewInit{
                           return false;
                       }
                   }),
-                  renderComponent: CustomCheckboxComponent,
+                  renderComponent: CustomCheckboxADComponent,
                   onComponentInitFunction(instance) {
                       instance.save.subscribe(row => {
                           parent.changeMemberAttendedStatus(row);
@@ -223,7 +223,7 @@ export class AllMembersComponent implements AfterViewInit{
                           return false;
                       }
                   }),
-                  renderComponent: CustomCheckboxComponent,
+                  renderComponent: CustomCheckboxADComponent,
                   onComponentInitFunction(instance) {
                       instance.save.subscribe(row => {
                           parent.changeMemberAttendedStatus(row);

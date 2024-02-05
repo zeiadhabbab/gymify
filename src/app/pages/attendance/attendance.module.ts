@@ -24,6 +24,7 @@ import { CustomCheckboxComponent } from '../../@theme/components/custom-checkbox
 
 import { Ng2SmartTableModule } from 'ng2-smart-table';
 import { MembersAttendanceReportComponent } from "./members-attendance-report/members-attendance-report.component";
+import { CustomCheckboxADComponent } from "../../@theme/components/custom-checkbox/custom-checkbox-ad.component";
 
 
 @NgModule({
@@ -51,6 +52,7 @@ import { MembersAttendanceReportComponent } from "./members-attendance-report/me
     AttendanceComponent,
     MembersAttendanceComponent,
     CustomCheckboxComponent,
+    CustomCheckboxADComponent,
     MembersAttendanceReportComponent
 
   ],
